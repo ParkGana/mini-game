@@ -3,10 +3,11 @@ import { MinesweeperStyle } from './minesweeper.style'
 import { Board } from '@/src/component/minesweeper/board/board.view'
 import { useMinesweeper } from './minesweeper.hook'
 import { Level } from '@/src/component/minesweeper/level/level.view'
-import { MinesweeperLevelEnum } from '@/redux/enum/minesweeper.enum'
+import { MinesweeperBoardMarkEnum, MinesweeperLevelEnum } from '@/redux/enum/minesweeper.enum'
 import { Condition } from '@/src/component/minesweeper/condition/condition.view'
 import { InfoMine } from '@/src/component/minesweeper/info/info-mine.view'
 import { InfoTime } from '@/src/component/minesweeper/info/info-time.view'
+import { BoardType } from '@/redux/type/minesweeper.type'
 
 export function Minesweeper() {
     const { events } = useMinesweeper()
@@ -35,8 +36,14 @@ export function Minesweeper() {
 
             <MinesweeperStyle.SafetyContainer>
                 <MinesweeperStyle.DataContainer>
-                    <InfoMine mine={minesweeper.mine} />
-                    <Condition condition={minesweeper.condition} />
+                    <InfoMine
+                        mine={
+                            minesweeper.mine -
+                            minesweeper.board.filter((item: BoardType) => item.mark !== MinesweeperBoardMarkEnum.EMPTY)
+                                .length
+                        }
+                    />
+                    <Condition condition={minesweeper.condition} level={minesweeper.level} />
                     <InfoTime />
                 </MinesweeperStyle.DataContainer>
 
