@@ -17,9 +17,9 @@ export const CreateLevelData = (level: string) => {
     }
 }
 
-/* mine 데이터 포맷 */
-export const FormatInfoMineData = (count: number) => {
-    return (count < 10 ? '00' : count < 100 ? '0' : '') + count
+/* mine 및 time 데이터 포맷 */
+export const FormatInfoData = (data: number) => {
+    return (data < 10 ? '00' : data < 100 ? '0' : '') + data
 }
 
 /* 선택한 영역의 주위 영역 추출 */
