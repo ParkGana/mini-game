@@ -30,6 +30,6 @@ npm install -D @types/styled-components
 
 <br />
 
-##### [ redux 기초 설정 ]
+##### [ redux 설정 ]
 
 npm install react-redux @reduxjs/toolkit
