@@ -1,7 +1,7 @@
-import { BoardType } from '@/redux/type/minesweeper.type'
+import { BoardType } from '@/redux/minesweeper/minesweeper.type'
 import { BoardItemStyle } from './board-item.style'
 import { useBoardItem } from './board-item.hook'
-import { MinesweeperBoardMarkEnum, MinesweeperBoardViewEnum } from '@/redux/enum/minesweeper.enum'
+import { MinesweeperBoardMarkEnum, MinesweeperBoardViewEnum } from '@/redux/minesweeper/minesweeper.enum'
 import { Image } from '@/src/component/common/image/image.view'
 
 export function BoardItem({ data }: { data: BoardType }) {

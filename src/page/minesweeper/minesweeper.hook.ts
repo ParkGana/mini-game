@@ -1,5 +1,5 @@
-import { MinesweeperLevelEnum } from '@/redux/enum/minesweeper.enum'
-import { createBoard } from '@/redux/slice/minesweeper.slice'
+import { MinesweeperLevelEnum } from '@/redux/minesweeper/minesweeper.enum'
+import { createBoard } from '@/redux/minesweeper/minesweeper.slice'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 

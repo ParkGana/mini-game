@@ -1,4 +1,4 @@
-import { MinesweeperType } from '@/redux/type/minesweeper.type'
+import { MinesweeperType } from '@/redux/minesweeper/minesweeper.type'
 import { BoardStyle } from './board.style'
 import { BoardItem } from './item/board-item.view'
 

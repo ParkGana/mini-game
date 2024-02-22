@@ -1,4 +1,4 @@
-import { clickArea } from '@/redux/slice/minesweeper.slice'
+import { clickArea } from '@/redux/minesweeper/minesweeper.slice'
 import { useDispatch } from 'react-redux'
 
 export function useBoardItem() {

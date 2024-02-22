@@ -3,7 +3,7 @@ import {
     MinesweeperBoardViewEnum,
     MinesweeperLevelEnum,
     MinesweeperConditionEnum
-} from '../enum/minesweeper.enum'
+} from './minesweeper.enum'
 
 export interface BoardType {
     idx: number

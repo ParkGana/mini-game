@@ -1,4 +1,4 @@
-import { MinesweeperLevelEnum } from '@/redux/enum/minesweeper.enum'
+import { MinesweeperLevelEnum } from '@/redux/minesweeper/minesweeper.enum'
 
 /* 단계별 데이터 생성 */
 export const CreateLevelData = (level: string) => {

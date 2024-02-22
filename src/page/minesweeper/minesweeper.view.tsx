@@ -3,11 +3,11 @@ import { MinesweeperStyle } from './minesweeper.style'
 import { Board } from '@/src/component/minesweeper/board/board.view'
 import { useMinesweeper } from './minesweeper.hook'
 import { Level } from '@/src/component/minesweeper/level/level.view'
-import { MinesweeperBoardMarkEnum, MinesweeperLevelEnum } from '@/redux/enum/minesweeper.enum'
+import { MinesweeperBoardMarkEnum, MinesweeperLevelEnum } from '@/redux/minesweeper/minesweeper.enum'
 import { Condition } from '@/src/component/minesweeper/condition/condition.view'
 import { InfoMine } from '@/src/component/minesweeper/info/info-mine.view'
 import { InfoTime } from '@/src/component/minesweeper/info/info-time.view'
-import { BoardType } from '@/redux/type/minesweeper.type'
+import { BoardType } from '@/redux/minesweeper/minesweeper.type'
 
 export function Minesweeper() {
     const { events } = useMinesweeper()

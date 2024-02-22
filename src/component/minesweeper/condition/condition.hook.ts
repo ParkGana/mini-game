@@ -1,4 +1,4 @@
-import { createBoard } from '@/redux/slice/minesweeper.slice'
+import { createBoard } from '@/redux/minesweeper/minesweeper.slice'
 import { useDispatch } from 'react-redux'
 
 export function useCondition() {

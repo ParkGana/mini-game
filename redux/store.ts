@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import minesweeperSlice from './slice/minesweeper.slice'
+import minesweeperSlice from './minesweeper/minesweeper.slice'
 
 export const store = configureStore({
     reducer: {

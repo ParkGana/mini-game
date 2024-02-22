@@ -1,4 +1,4 @@
-import { MinesweeperConditionEnum } from '@/redux/enum/minesweeper.enum'
+import { MinesweeperConditionEnum } from '@/redux/minesweeper/minesweeper.enum'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 

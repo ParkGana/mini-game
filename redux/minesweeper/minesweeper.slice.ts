@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { MinesweeperType } from '../type/minesweeper.type'
+import { MinesweeperType } from './minesweeper.type'
 import {
     MinesweeperBoardMarkEnum,
     MinesweeperBoardViewEnum,
     MinesweeperLevelEnum,
     MinesweeperConditionEnum
-} from '../enum/minesweeper.enum'
+} from './minesweeper.enum'
 import { CreateLevelData, GetAroundArea, MakeRandomMine } from '@/src/tool/minesweeper.tool'
 
 const InitialState: MinesweeperType = {
