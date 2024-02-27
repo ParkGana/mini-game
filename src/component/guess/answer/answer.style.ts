@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
 export namespace AnswerStyle {
-    export const Container = styled.div`
-        padding: 20px;
-    `
+    export const Container = styled.div``
 
     export const SafetyContainer = styled.div`
         display: grid;

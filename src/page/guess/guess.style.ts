@@ -10,7 +10,10 @@ export namespace GuessStyle {
 
     export const SafetyContainer = styled.div`
         ${({ theme }) => `
+            display: grid;
+            gap: 20px;
             border: 5px solid ${theme.color.gray};
+            padding: 20px;
         `}
     `
 }

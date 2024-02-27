@@ -1,4 +1,4 @@
-import { GuessPeopleCategoryEnum } from '@/redux/guess/guess.enum'
+import { GuessPeopleCategoryEnum, GuessTypeEnum } from '@/redux/guess/guess.enum'
 import { GuessStyle } from './guess.style'
 import { Category } from '@/src/component/guess/category/category.view'
 import { useGuess } from './guess.hook'
@@ -9,7 +9,7 @@ import { Answer } from '@/src/component/guess/answer/answer.view'
 export function GuessPeople() {
     const people = useSelector((state: any) => state.guess)
 
-    const { datas, events } = useGuess(people.type)
+    const { datas, events } = useGuess(GuessTypeEnum.PEOPLE)
 
     return (
         <GuessStyle.Container>
@@ -17,10 +17,11 @@ export function GuessPeople() {
                 selected={datas.category}
                 options={[
                     GuessPeopleCategoryEnum.ALL,
-                    GuessPeopleCategoryEnum.ACTOR,
                     GuessPeopleCategoryEnum.SINGER,
+                    GuessPeopleCategoryEnum.ENTERTAINER,
+                    GuessPeopleCategoryEnum.ACTOR,
                     GuessPeopleCategoryEnum.IDOL,
-                    GuessPeopleCategoryEnum.ENTERTAINER
+                    GuessPeopleCategoryEnum.BASEBALL
                 ]}
                 selectCallback={events.onChangeCategory}
             />

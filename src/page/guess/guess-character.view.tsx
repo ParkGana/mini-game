@@ -1,4 +1,4 @@
-import { GuessCharacterCategoryEnum } from '@/redux/guess/guess.enum'
+import { GuessCharacterCategoryEnum, GuessTypeEnum } from '@/redux/guess/guess.enum'
 import { GuessStyle } from './guess.style'
 import { Category } from '@/src/component/guess/category/category.view'
 import { useGuess } from './guess.hook'
@@ -9,13 +9,25 @@ import { Answer } from '@/src/component/guess/answer/answer.view'
 export function GuessCharacter() {
     const character = useSelector((state: any) => state.guess)
 
-    const { datas, events } = useGuess(character.type)
+    const { datas, events } = useGuess(GuessTypeEnum.CHARACTER)
 
     return (
         <GuessStyle.Container>
             <Category
                 selected={datas.category}
-                options={[GuessCharacterCategoryEnum.ALL]}
+                options={[
+                    GuessCharacterCategoryEnum.ALL,
+                    GuessCharacterCategoryEnum.ANPANMAN,
+                    GuessCharacterCategoryEnum.SPONGEBOB,
+                    GuessCharacterCategoryEnum.DORAEMON,
+                    GuessCharacterCategoryEnum.DISNEYPRINCESS,
+                    GuessCharacterCategoryEnum.CONAN,
+                    GuessCharacterCategoryEnum.PORORO,
+                    GuessCharacterCategoryEnum.SANRIO,
+                    GuessCharacterCategoryEnum.ONEPIECE,
+                    GuessCharacterCategoryEnum.CRAYON,
+                    GuessCharacterCategoryEnum.POKEMON
+                ]}
                 selectCallback={events.onChangeCategory}
             />
 
