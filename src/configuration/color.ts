@@ -9,5 +9,11 @@ export const color = {
 
     darkgray: '#444444',
 
-    red: '#FF0000'
+    red: '#FF0000',
+
+    lightgreen: '#AAD751',
+
+    green: '#A2D149',
+
+    darkgreen: '#4A752C'
 }
