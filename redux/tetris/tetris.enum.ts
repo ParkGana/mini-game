@@ -16,7 +16,6 @@ export enum TetrisDirectionEnum {
 }
 
 export enum TetrisConditionEnum {
-    STANDBY = 'STANDBY',
     RUNNING = 'RUNNING',
-    FAIL = 'FAIL'
+    FINISH = 'FINISH'
 }

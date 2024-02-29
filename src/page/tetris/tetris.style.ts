@@ -17,9 +17,4 @@ export namespace TetrisStyle {
         display: grid;
         align-content: space-between;
     `
-
-    export const DataContainer = styled.div`
-        display: grid;
-        gap: 20px;
-    `
 }

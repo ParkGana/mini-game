@@ -10,6 +10,7 @@ export namespace ButtonStyle {
             text-align: center;
             color: ${theme.color.white};
             padding: 15px;
+            cursor: pointer;
         `}
     `
 }

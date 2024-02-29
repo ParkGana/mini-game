@@ -1,25 +1,16 @@
 import { TetrisConditionEnum, TetrisDirectionEnum, TetrisShapeEnum } from './tetris.enum'
 
-export interface CoordinateType {
+export interface BlockType {
+    color: string
     x: number
     y: number
 }
 
-export interface StoreType {
-    color: string
-    coordinate: CoordinateType
-}
-
-export interface BlockType {
-    shape: TetrisShapeEnum
-    direction: TetrisDirectionEnum
-    color: string
-    coordinate: CoordinateType[]
-}
-
 export interface TetrisType {
-    current: BlockType
+    current: TetrisShapeEnum
+    direction: TetrisDirectionEnum
+    block: BlockType[]
+    store: BlockType[]
     next: TetrisShapeEnum
-    store: StoreType[]
     condition: TetrisConditionEnum
 }
