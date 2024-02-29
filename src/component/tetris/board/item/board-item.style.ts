@@ -8,7 +8,6 @@ export namespace BoardItemStyle {
             background-color: ${color};
             border-right: 1px solid ${theme.color.gray};
             border-bottom: 1px solid ${theme.color.gray};
-            color: white;
         `}
     `
 }

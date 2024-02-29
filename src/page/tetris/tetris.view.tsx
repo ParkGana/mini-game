@@ -14,10 +14,12 @@ export function Tetris() {
     return (
         <TetrisStyle.Container>
             <Home />
-            <Board block={tetris.block} store={tetris.store} />
             <TetrisStyle.SafetyContainer>
-                <Preview next={tetris.next} />
-                <Button name={'RESET'} clickCallback={events.onClickButton} />
+                <Board block={tetris.block} store={tetris.store} />
+                <TetrisStyle.LeftContainer>
+                    <Preview next={tetris.next} />
+                    <Button name={'RESET'} clickCallback={events.onClickButton} />
+                </TetrisStyle.LeftContainer>
             </TetrisStyle.SafetyContainer>
         </TetrisStyle.Container>
     )
