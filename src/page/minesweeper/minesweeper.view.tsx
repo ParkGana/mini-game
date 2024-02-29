@@ -8,6 +8,7 @@ import { Condition } from '@/src/component/minesweeper/condition/condition.view'
 import { InfoMine } from '@/src/component/minesweeper/info/info-mine.view'
 import { InfoTime } from '@/src/component/minesweeper/info/info-time.view'
 import { BoardType } from '@/redux/minesweeper/minesweeper.type'
+import { Home } from '@/src/component/common/home/home.view'
 
 export function Minesweeper() {
     const { events } = useMinesweeper()
@@ -16,6 +17,7 @@ export function Minesweeper() {
 
     return (
         <MinesweeperStyle.Container>
+            <Home />
             <MinesweeperStyle.LevelContainer>
                 <Level
                     name={'초급'}

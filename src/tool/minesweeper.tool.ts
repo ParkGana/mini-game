@@ -6,12 +6,15 @@ export const CreateLevelData = (level: string) => {
         // 초급
         case MinesweeperLevelEnum.EASY:
             return { row: 9, column: 9, mine: 10 }
+
         // 중급
         case MinesweeperLevelEnum.MEDIUM:
             return { row: 16, column: 16, mine: 40 }
+
         // 고급
         case MinesweeperLevelEnum.DIFFICULT:
             return { row: 16, column: 30, mine: 99 }
+
         default:
             return { row: 9, column: 9, mine: 10 }
     }
@@ -23,7 +26,7 @@ export const FormatInfoData = (data: number) => {
 }
 
 /* 선택한 영역의 주위 영역 추출 */
-export function GetAroundArea(row: number, column: number, idx: number) {
+export const GetAroundArea = (row: number, column: number, idx: number) => {
     // 왼쪽 상단 영역 ([0, 0])
     if (idx === 0) {
         return [idx + 1, idx + column, idx + column + 1]
@@ -78,7 +81,7 @@ export function GetAroundArea(row: number, column: number, idx: number) {
 }
 
 /* 랜덤으로 지뢰 위치 설정 */
-export function MakeRandomMine(row: number, column: number, mine: number, exception: number) {
+export const MakeRandomMine = (row: number, column: number, mine: number, exception: number) => {
     let mineSet = new Set<number>([])
 
     while (mineSet.size < mine) {

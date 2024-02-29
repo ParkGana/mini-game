@@ -5,6 +5,7 @@ import { useGuess } from './guess.hook'
 import { useSelector } from 'react-redux'
 import { Image } from '@/src/component/common/image/image.view'
 import { Answer } from '@/src/component/guess/answer/answer.view'
+import { Home } from '@/src/component/common/home/home.view'
 
 export function GuessPeople() {
     const people = useSelector((state: any) => state.guess)
@@ -13,6 +14,7 @@ export function GuessPeople() {
 
     return (
         <GuessStyle.Container>
+            <Home />
             <Category
                 selected={datas.category}
                 options={[

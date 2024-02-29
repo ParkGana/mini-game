@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { Preview } from '@/src/component/tetris/preview/preview.view'
 import { Button } from '@/src/component/tetris/button/button.view'
 import { useTetris } from './tetris.hook'
+import { Home } from '@/src/component/common/home/home.view'
 
 export function Tetris() {
     const tetris = useSelector((state: any) => state.tetris)
@@ -12,6 +13,7 @@ export function Tetris() {
 
     return (
         <TetrisStyle.Container>
+            <Home />
             <Board block={tetris.block} store={tetris.store} />
             <TetrisStyle.SafetyContainer>
                 <Preview next={tetris.next} />
