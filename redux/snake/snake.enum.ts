@@ -8,5 +8,6 @@ export enum SnakeDirectionEnum {
 export enum SnakeConditionEnum {
     STANDBY = 'STANDBY',
     RUNNING = 'RUNNING',
+    EAT = 'EAT',
     FINISH = 'FINISH'
 }

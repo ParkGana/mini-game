@@ -2,8 +2,13 @@ import { BodyType } from '@/redux/snake/snake.type'
 import { BoardStyle } from './board.style'
 import { BoardItem } from './item/board-item.view'
 import React from 'react'
+import { Result } from '../../common/result/result.view'
+import { useSelector } from 'react-redux'
+import { SnakeConditionEnum } from '@/redux/snake/snake.enum'
 
 export function Board({ body, fruit }: { body: BodyType[]; fruit: BodyType }) {
+    const snake = useSelector((state: any) => state.snake)
+
     return (
         <BoardStyle.Container>
             {[...Array(15)].map((num, rowIndex) => (
@@ -22,6 +27,8 @@ export function Board({ body, fruit }: { body: BodyType[]; fruit: BodyType }) {
                     ))}
                 </React.Fragment>
             ))}
+
+            {snake.condition === SnakeConditionEnum.FINISH && <Result message={'FAIL!'} />}
         </BoardStyle.Container>
     )
 }

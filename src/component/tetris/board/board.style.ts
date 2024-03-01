@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export namespace BoardStyle {
     export const Container = styled.div`
         ${({ theme }) => `
+            position: relative;
             display: grid;
             grid-template-rows: repeat(20, 30px);
             grid-template-columns: repeat(10, 30px);
