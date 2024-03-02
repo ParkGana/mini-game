@@ -16,10 +16,10 @@ export function Tetris() {
             <Home />
             <TetrisStyle.SafetyContainer>
                 <Board block={tetris.block} store={tetris.store} />
-                <TetrisStyle.LeftContainer>
+                <TetrisStyle.RightContainer>
                     <Preview next={tetris.next} />
                     <Button name={'RESET'} clickCallback={events.onClickButton} />
-                </TetrisStyle.LeftContainer>
+                </TetrisStyle.RightContainer>
             </TetrisStyle.SafetyContainer>
         </TetrisStyle.Container>
     )

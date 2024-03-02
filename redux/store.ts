@@ -8,7 +8,7 @@ export const store = configureStore({
     reducer: {
         guess: guessSlice.reducer,
         minesweeper: minesweeperSlice.reducer,
-        tetris: tetrisSlice.reducer,
-        snake: snakeSlice.reducer
+        snake: snakeSlice.reducer,
+        tetris: tetrisSlice.reducer
     }
 })

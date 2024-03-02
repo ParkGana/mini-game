@@ -10,7 +10,7 @@ export namespace SnakeStyle {
     export const SafetyContainer = styled.div`
         ${({ theme }) => `
             display: grid;
-            gap: 30px;
+            gap: 10px;
             padding: 30px;
             background-color: ${theme.color.darkgreen};
         `}

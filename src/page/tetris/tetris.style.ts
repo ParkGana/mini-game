@@ -18,7 +18,7 @@ export namespace TetrisStyle {
         `}
     `
 
-    export const LeftContainer = styled.div`
+    export const RightContainer = styled.div`
         display: grid;
         align-content: space-between;
     `

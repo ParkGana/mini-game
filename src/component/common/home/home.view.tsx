@@ -7,7 +7,7 @@ export function Home() {
 
     return (
         <HomeStyle.Container onClick={() => router.push('/')}>
-            <Image src={'/icons/home.png'} alt="icon" />
+            <Image src={'/icons/common/home.png'} alt="icon" />
         </HomeStyle.Container>
     )
 }

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { BodyType, SnakeType } from './snake.type'
+import { SnakeType } from './snake.type'
 import { SnakeConditionEnum, SnakeDirectionEnum } from './snake.enum'
 import { ChangeDirection, CheckDown, CheckLeft, CheckRight, CheckUp, RandomFruit } from '@/src/tool/snake.tool'
 
