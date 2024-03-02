@@ -15,5 +15,11 @@ export const color = {
 
     green: '#A2D149',
 
-    darkgreen: '#4A752C'
+    darkgreen: '#4A752C',
+
+    lightbrown: '#FBEDDC',
+
+    brown: '#715541',
+
+    darkbrown: '#3C322B'
 }
