@@ -6,7 +6,6 @@ import {
     ChangeCoordinate,
     ChangeDirection,
     CheckDown,
-    CheckFinish,
     CheckLeft,
     CheckRight,
     RandomBlock
@@ -155,7 +154,7 @@ const tetrisSlice = createSlice({
 
         /* 게임 종료 */
         finishGame: (state, action) => {
-            if (CheckFinish(state.store)) {
+            if (state.store.filter((item) => item.y === 0).length > 0) {
                 state.condition = TetrisConditionEnum.FINISH
             }
         }

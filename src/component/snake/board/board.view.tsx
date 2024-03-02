@@ -6,7 +6,7 @@ import { Result } from '../../common/result/result.view'
 import { useSelector } from 'react-redux'
 import { SnakeConditionEnum } from '@/redux/snake/snake.enum'
 
-export function Board({ body, fruit }: { body: BodyType[]; fruit: BodyType }) {
+export function Board() {
     const snake = useSelector((state: any) => state.snake)
 
     return (
@@ -18,11 +18,16 @@ export function Board({ body, fruit }: { body: BodyType[]; fruit: BodyType }) {
                             key={colIndex}
                             isEven={(rowIndex * 15 + colIndex) % 2 === 0}
                             isHead={
-                                body.filter((item, index) => index === 0 && item.x === colIndex && item.y === rowIndex)
+                                snake.body.filter(
+                                    (item: BodyType, index: number) =>
+                                        index === 0 && item.x === colIndex && item.y === rowIndex
+                                ).length > 0
+                            }
+                            isBody={
+                                snake.body.filter((item: BodyType) => item.x === colIndex && item.y === rowIndex)
                                     .length > 0
                             }
-                            isBody={body.filter((item) => item.x === colIndex && item.y === rowIndex).length > 0}
-                            isFruit={fruit.x === colIndex && fruit.y === rowIndex}
+                            isFruit={snake.fruit.x === colIndex && snake.fruit.y === rowIndex}
                         />
                     ))}
                 </React.Fragment>

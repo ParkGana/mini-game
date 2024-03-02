@@ -22,8 +22,6 @@ export namespace CategoryStyle {
         `}
     `
 
-    export const Icon = styled.img``
-
     export namespace Option {
         export const Container = styled.div<{ isOpen: boolean }>`
             ${({ theme, isOpen }) => `

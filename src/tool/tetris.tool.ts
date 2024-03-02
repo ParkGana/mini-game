@@ -320,8 +320,3 @@ export const CheckRight = (block: BlockType[], store: BlockType[]) => {
 
     return isWall && isStack
 }
-
-/* 다음 블록으로 진행 가능한지 판단 */
-export const CheckFinish = (store: BlockType[]) => {
-    return store.filter((item) => item.y === 0).length > 0
-}

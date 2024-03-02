@@ -1,22 +1,15 @@
+import { useSelector } from 'react-redux'
 import { Image } from '../../common/image/image.view'
 import { AnswerStyle } from './answer.style'
 
-export function Answer({
-    answer,
-    isOpen,
-    checkCallback,
-    moveCallback
-}: {
-    answer: string
-    isOpen: boolean
-    checkCallback: () => void
-    moveCallback: () => void
-}) {
+export function Answer({ checkCallback, moveCallback }: { checkCallback: () => void; moveCallback: () => void }) {
+    const character = useSelector((state: any) => state.guess)
+
     return (
         <AnswerStyle.Container>
-            {isOpen ? (
+            {character.isOpen ? (
                 <AnswerStyle.SafetyContainer>
-                    <AnswerStyle.Text>{answer}</AnswerStyle.Text>
+                    <AnswerStyle.Text>{character.name}</AnswerStyle.Text>
                     <AnswerStyle.Button.Container onClick={moveCallback}>
                         <AnswerStyle.Button.Text>다음 문제</AnswerStyle.Button.Text>
                         <Image src={'/icons/guess/arrow-right.png'} alt="icon" />

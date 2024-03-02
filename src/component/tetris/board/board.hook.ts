@@ -1,7 +1,10 @@
 import { BlockType } from '@/redux/tetris/tetris.type'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
-export function useBoard(block: BlockType[], store: BlockType[]) {
+export function useBoard() {
+    const tetris = useSelector((state: any) => state.tetris)
+
     const [board, setBoard] = useState<BlockType[]>([])
 
     useEffect(() => {
@@ -11,10 +14,10 @@ export function useBoard(block: BlockType[], store: BlockType[]) {
             for (let j = 0; j < 10; j++) {
                 let item: BlockType = { color: '#000000', x: j, y: i }
 
-                if (block.filter((item) => item.x === j && item.y === i).length > 0) {
-                    item = block.filter((item) => item.x === j && item.y === i)[0]
-                } else if (store.filter((item) => item.x === j && item.y === i).length > 0) {
-                    item = store.filter((item) => item.x === j && item.y === i)[0]
+                if (tetris.block.filter((item: BlockType) => item.x === j && item.y === i).length > 0) {
+                    item = tetris.block.filter((item: BlockType) => item.x === j && item.y === i)[0]
+                } else if (tetris.store.filter((item: BlockType) => item.x === j && item.y === i).length > 0) {
+                    item = tetris.store.filter((item: BlockType) => item.x === j && item.y === i)[0]
                 }
 
                 setBoard((prevState) => {
@@ -22,7 +25,7 @@ export function useBoard(block: BlockType[], store: BlockType[]) {
                 })
             }
         }
-    }, [block, store])
+    }, [tetris.block, tetris.store])
 
     return {
         datas: {

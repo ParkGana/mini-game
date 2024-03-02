@@ -1,7 +1,7 @@
 import { SnakeDirectionEnum } from '@/redux/snake/snake.enum'
 import { BodyType } from '@/redux/snake/snake.type'
 
-/* 랜덤으로 과일 위치 선정 */
+/* 랜덤으로 과일 위치 설정 */
 export const RandomFruit = (body: BodyType[]) => {
     let randomX = Math.floor(Math.random() * 15)
     let randomY = Math.floor(Math.random() * 15)
@@ -14,7 +14,7 @@ export const RandomFruit = (body: BodyType[]) => {
     return { x: randomX, y: randomY }
 }
 
-/* 방향 변경 */
+/* 스네이크 진행 방향 변경 */
 export const ChangeDirection = (key: string, direction: SnakeDirectionEnum) => {
     switch (key) {
         case 'ArrowUp':

@@ -11,9 +11,9 @@ import { BoardType } from '@/redux/minesweeper/minesweeper.type'
 import { Home } from '@/src/component/common/home/home.view'
 
 export function Minesweeper() {
-    const { events } = useMinesweeper()
-
     const minesweeper = useSelector((state: any) => state.minesweeper)
+
+    const { events } = useMinesweeper()
 
     return (
         <MinesweeperStyle.Container>
@@ -45,11 +45,11 @@ export function Minesweeper() {
                                 .length
                         }
                     />
-                    <Condition condition={minesweeper.condition} level={minesweeper.level} />
+                    <Condition />
                     <InfoTime />
                 </MinesweeperStyle.DataContainer>
 
-                <Board data={minesweeper} />
+                <Board />
             </MinesweeperStyle.SafetyContainer>
         </MinesweeperStyle.Container>
     )

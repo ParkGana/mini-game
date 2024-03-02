@@ -34,12 +34,7 @@ export function GuessCharacter() {
             />
 
             <GuessStyle.SafetyContainer>
-                <Answer
-                    answer={character.name}
-                    isOpen={character.isOpen}
-                    checkCallback={events.onCheckAnswer}
-                    moveCallback={events.onMoveNext}
-                />
+                <Answer checkCallback={events.onCheckAnswer} moveCallback={events.onMoveNext} />
                 <Image src={`/images/guess-character/${character.category}/${character.name}.png`} alt="image" />
             </GuessStyle.SafetyContainer>
         </GuessStyle.Container>

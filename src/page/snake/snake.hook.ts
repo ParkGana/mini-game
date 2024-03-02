@@ -1,13 +1,16 @@
 import { SnakeConditionEnum } from '@/redux/snake/snake.enum'
 import { changeDirection, moveSnake, resetGame, startGame } from '@/redux/snake/snake.slice'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export function useSnake(condition: SnakeConditionEnum) {
+export function useSnake() {
     const dispatch = useDispatch()
+
+    const snake = useSelector((state: any) => state.snake)
 
     useEffect(() => {
         dispatch(resetGame({}))
+
         document.addEventListener('keydown', (e) => {
             dispatch(startGame({ key: e.key }))
         })
@@ -16,10 +19,9 @@ export function useSnake(condition: SnakeConditionEnum) {
     }, [])
 
     useEffect(() => {
-        if (condition === SnakeConditionEnum.RUNNING || condition === SnakeConditionEnum.EAT) {
+        if (snake.condition === SnakeConditionEnum.RUNNING || snake.condition === SnakeConditionEnum.EAT) {
             document.addEventListener('keydown', (e) => {
                 dispatch(startGame({ key: e.key }))
-
                 dispatch(changeDirection({ key: e.key }))
             })
 
@@ -31,7 +33,7 @@ export function useSnake(condition: SnakeConditionEnum) {
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [condition])
+    }, [snake.condition])
 
     const onClickButton = () => {
         dispatch(resetGame({}))

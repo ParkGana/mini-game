@@ -1,10 +1,12 @@
 import { PuzzleNumberConditionEnum } from '@/redux/puzzle/puzzle-number.enum'
 import { moveToDown, moveToLeft, moveToRight, moveToUp, resetGame } from '@/redux/puzzle/puzzle-number.slice'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export function usePuzzleNumber(condition: PuzzleNumberConditionEnum) {
+export function usePuzzleNumber() {
     const dispatch = useDispatch()
+
+    const puzzle = useSelector((state: any) => state.puzzleNumber)
 
     useEffect(() => {
         dispatch(resetGame({}))
@@ -13,7 +15,7 @@ export function usePuzzleNumber(condition: PuzzleNumberConditionEnum) {
     }, [])
 
     useEffect(() => {
-        if (condition === PuzzleNumberConditionEnum.RUNNING) {
+        if (puzzle.condition === PuzzleNumberConditionEnum.RUNNING) {
             document.addEventListener('keydown', (e) => {
                 // 위쪽 방향키 눌렀을 경우
                 if (e.key == 'ArrowUp') {
@@ -35,7 +37,7 @@ export function usePuzzleNumber(condition: PuzzleNumberConditionEnum) {
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [condition])
+    }, [puzzle.condition])
 
     const onClickButton = () => {
         dispatch(resetGame({}))

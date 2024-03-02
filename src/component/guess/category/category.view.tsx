@@ -1,3 +1,4 @@
+import { Image } from '../../common/image/image.view'
 import { useCategory } from './category.hook'
 import { CategoryStyle } from './category.style'
 
@@ -15,7 +16,7 @@ export function Category({
     return (
         <CategoryStyle.Container ref={refs.ref} onClick={events.onToggleCategory}>
             <CategoryStyle.Text>{selected}</CategoryStyle.Text>
-            <CategoryStyle.Icon src={`/icons/guess/category-arrow-${states.isOpen ? 'up' : 'down'}.png`} alt={'icon'} />
+            <Image src={`/icons/guess/category-arrow-${states.isOpen ? 'up' : 'down'}.png`} alt="icon" />
             <CategoryStyle.Option.Container isOpen={states.isOpen}>
                 {options.map((option, index) => (
                     <CategoryStyle.Option.SafetyContainer key={index} onClick={() => selectCallback(option)}>

@@ -29,12 +29,7 @@ export function GuessPeople() {
             />
 
             <GuessStyle.SafetyContainer>
-                <Answer
-                    answer={people.name}
-                    isOpen={people.isOpen}
-                    checkCallback={events.onCheckAnswer}
-                    moveCallback={events.onMoveNext}
-                />
+                <Answer checkCallback={events.onCheckAnswer} moveCallback={events.onMoveNext} />
                 <Image src={`/images/guess-people/${people.category}/${people.name}.png`} alt="image" />
             </GuessStyle.SafetyContainer>
         </GuessStyle.Container>

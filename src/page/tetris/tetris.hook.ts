@@ -1,10 +1,12 @@
 import { TetrisConditionEnum } from '@/redux/tetris/tetris.enum'
 import { moveToDown, moveToLeft, moveToRight, rotateBlock, resetGame, moveToDirect } from '@/redux/tetris/tetris.slice'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export function useTetris(condition: TetrisConditionEnum) {
+export function useTetris() {
     const dispatch = useDispatch()
+
+    const tetris = useSelector((state: any) => state.tetris)
 
     useEffect(() => {
         dispatch(resetGame({}))
@@ -13,7 +15,7 @@ export function useTetris(condition: TetrisConditionEnum) {
     }, [])
 
     useEffect(() => {
-        if (condition === TetrisConditionEnum.RUNNING) {
+        if (tetris.condition === TetrisConditionEnum.RUNNING) {
             document.addEventListener('keydown', (e) => {
                 // 위쪽 방향키 눌렀을 경우 블록 회전
                 if (e.key == 'ArrowUp') {
@@ -45,7 +47,7 @@ export function useTetris(condition: TetrisConditionEnum) {
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [condition])
+    }, [tetris.condition])
 
     const onClickButton = () => {
         dispatch(resetGame({}))
