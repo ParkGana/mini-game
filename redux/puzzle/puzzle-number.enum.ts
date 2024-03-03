@@ -1,4 +1,5 @@
 export enum PuzzleNumberConditionEnum {
     RUNNING = 'RUNNING',
-    FINISH = 'FINISH'
+    FAIL = 'FAIL',
+    SUCCESS = 'SUCCESS'
 }

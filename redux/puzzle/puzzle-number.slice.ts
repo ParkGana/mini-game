@@ -207,7 +207,9 @@ const puzzleNumberSlice = createSlice({
         /* 게임 종료 */
         finishGame: (state, action) => {
             if (state.value.includes(2048)) {
-                state.condition = PuzzleNumberConditionEnum.FINISH
+                state.condition = PuzzleNumberConditionEnum.SUCCESS
+            } else if (state.value.filter((item) => item === 0).length === 0) {
+                state.condition = PuzzleNumberConditionEnum.FAIL
             }
         }
     }

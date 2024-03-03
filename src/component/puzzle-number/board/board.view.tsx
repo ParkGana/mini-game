@@ -13,7 +13,8 @@ export function Board() {
                 <BoardItem key={index} value={item} />
             ))}
 
-            {puzzle.condition === PuzzleNumberConditionEnum.FINISH && <Result message={'SUCCESS!'} />}
+            {puzzle.condition === PuzzleNumberConditionEnum.SUCCESS && <Result message={'SUCCESS!'} />}
+            {puzzle.condition === PuzzleNumberConditionEnum.FAIL && <Result message={'FAIL!'} />}
         </BoardStyle.Container>
     )
 }
