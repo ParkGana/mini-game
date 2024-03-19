@@ -17,6 +17,8 @@ export const color = {
 
     darkgreen: '#4A752C',
 
+    beige: '#F1CA8E',
+
     lightbrown: '#FBEDDC',
 
     brown: '#715541',
