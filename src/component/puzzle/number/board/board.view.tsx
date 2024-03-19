@@ -1,6 +1,6 @@
 import { BoardStyle } from './board.style'
 import { BoardItem } from './item/board-item.view'
-import { Result } from '../../common/result/result.view'
+import { Result } from '../../../common/result/result.view'
 import { useSelector } from 'react-redux'
 import { PuzzleNumberConditionEnum } from '@/redux/puzzle/puzzle-number.enum'
 
