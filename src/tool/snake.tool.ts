@@ -3,12 +3,12 @@ import { BodyType } from '@/redux/snake/snake.type'
 
 /* 랜덤으로 과일 위치 설정 */
 export const RandomFruit = (body: BodyType[]) => {
-    let randomX = Math.floor(Math.random() * 15)
-    let randomY = Math.floor(Math.random() * 15)
+    let randomX = Math.floor(Math.random() * 16)
+    let randomY = Math.floor(Math.random() * 16)
 
     while (body.filter((item) => item.x === randomX && item.y === randomY).length > 0) {
-        randomX = Math.floor(Math.random() * 15)
-        randomY = Math.floor(Math.random() * 15)
+        randomX = Math.floor(Math.random() * 16)
+        randomY = Math.floor(Math.random() * 16)
     }
 
     return { x: randomX, y: randomY }
@@ -45,7 +45,6 @@ export const CheckUp = (body: BodyType[]) => {
 
     /* 한 칸 위에 몸통이 위치하고 있는 경우 */
     if (body.filter((item) => item.x === body[0].x && item.y === body[0].y - 1).length > 0) {
-        console.log('test')
         // 한 칸 위에 위치한 몸통이 마지막 몸통이 아닌 경우
         if (body.findIndex((item) => item.x === body[0].x && item.y === body[0].y - 1) !== body.length - 1) {
             isMove = false
@@ -60,7 +59,7 @@ export const CheckDown = (body: BodyType[]) => {
     let isMove = true
 
     // 머리가 아래쪽 벽에 붙어 있는 경우
-    if (body[0].y === 14) {
+    if (body[0].y === 15) {
         isMove = false
     }
 
@@ -100,7 +99,7 @@ export const CheckRight = (body: BodyType[]) => {
     let isMove = true
 
     // 머리가 오른쪽 벽에 붙어 있는 경우
-    if (body[0].x === 14) {
+    if (body[0].x === 15) {
         isMove = false
     }
 

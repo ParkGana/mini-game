@@ -2,16 +2,10 @@ import styled from 'styled-components'
 
 export namespace SnakeStyle {
     export const Container = styled.div`
-        display: grid;
-        justify-items: center;
-        padding: 20px;
-    `
-
-    export const SafetyContainer = styled.div`
         ${({ theme }) => `
             display: grid;
-            gap: 10px;
-            padding: 30px;
+            gap: 20px;
+            padding: 20px;
             background-color: ${theme.color.darkgreen};
         `}
     `

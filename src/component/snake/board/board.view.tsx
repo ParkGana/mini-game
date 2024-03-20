@@ -11,23 +11,22 @@ export function Board() {
 
     return (
         <BoardStyle.Container>
-            {[...Array(15)].map((num, rowIndex) => (
+            {[...Array(16)].map((num, rowIndex) => (
                 <React.Fragment key={rowIndex}>
-                    {[...Array(15)].map((num, colIndex) => (
+                    {[...Array(16)].map((num, colIndex) => (
                         <BoardItem
                             key={colIndex}
-                            isEven={(rowIndex * 15 + colIndex) % 2 === 0}
-                            isHead={
+                            head={
                                 snake.body.filter(
                                     (item: BodyType, index: number) =>
                                         index === 0 && item.x === colIndex && item.y === rowIndex
                                 ).length > 0
                             }
-                            isBody={
+                            body={
                                 snake.body.filter((item: BodyType) => item.x === colIndex && item.y === rowIndex)
                                     .length > 0
                             }
-                            isFruit={snake.fruit.x === colIndex && snake.fruit.y === rowIndex}
+                            fruit={snake.fruit.x === colIndex && snake.fruit.y === rowIndex}
                         />
                     ))}
                 </React.Fragment>

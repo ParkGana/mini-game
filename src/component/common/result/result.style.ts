@@ -1,21 +1,22 @@
 import styled from 'styled-components'
 
 export namespace ResultStyle {
+    export const Background = styled.div`
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    `
+
     export const Container = styled.div`
         ${({ theme }) => `
-            width: 250px;
-            height: 90px;
-            position: absolute;
-            top: calc(50% - 45px);
-            left: calc(50% - 125px);
-            display: grid;
-            justify-items: center;
-            align-items: center;
-            padding: 0 8px;
             background-color: ${theme.color.white};
             border: 5px solid ${theme.color.red};
-            ${theme.font.headline1};
-            color: ${theme.color.red};
+            padding: 10px;
         `}
     `
 
@@ -23,8 +24,14 @@ export namespace ResultStyle {
         ${({ theme }) => `
             width: 100%;
             border: 3px dashed ${theme.color.red};
-            text-align: center;
-            padding: 10px;
+            padding: 15px 25px;
+        `}
+    `
+
+    export const Text = styled.p`
+        ${({ theme }) => `
+            ${theme.font.headline1};
+            color: ${theme.color.red};
         `}
     `
 }

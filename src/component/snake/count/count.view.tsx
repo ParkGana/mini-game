@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux'
 import { Image } from '../../common/image/image.view'
-import { InfoStyle } from './info.style'
+import { CountStyle } from './count.style'
 
-export function Info() {
+export function Count() {
     const snake = useSelector((state: any) => state.snake)
 
     return (
-        <InfoStyle.Container>
+        <CountStyle.Container>
             <Image src={'/icons/snake/fruit.png'} alt="icon" />
-            <InfoStyle.Count>{snake.count}</InfoStyle.Count>
-        </InfoStyle.Container>
+            <CountStyle.Text>{snake.count}</CountStyle.Text>
+        </CountStyle.Container>
     )
 }
