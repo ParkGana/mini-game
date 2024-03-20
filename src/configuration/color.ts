@@ -3,23 +3,21 @@ export const color = {
 
     black: '#000000',
 
+    red: '#FF0000',
+
     lightgray: '#DDDDDD',
 
     gray: '#91979D',
 
     darkgray: '#444444',
 
-    red: '#FF0000',
+    lightgreen: '#A8D44F',
 
-    lightgreen: '#AAD751',
+    green: '#4F822C',
 
-    green: '#A2D149',
+    darkgreen: '#274611',
 
-    darkgreen: '#4A752C',
-
-    beige: '#F1CA8E',
-
-    lightbrown: '#FBEDDC',
+    lightbrown: '#F1CA8E',
 
     brown: '#715541',
 

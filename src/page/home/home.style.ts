@@ -14,13 +14,13 @@ export namespace HomeStyle {
             gap: 50px;
 
             ${theme.ratio.size({
-                large: `
+                web: `
                     grid-template-columns: repeat(3, 1fr);
                 `,
-                medium: `
+                tablet: `
                     grid-template-columns: repeat(2, 1fr);
                 `,
-                small: ``
+                mobile: ``
             })}
         `}
     `

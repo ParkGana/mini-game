@@ -1,32 +1,32 @@
-const LARGE_MEDIUM = 1329 as const
-const MEDIUM_SMALL = 759 as const
+const WEB_TABLET = 1329 as const
+const TABLET_MOBILE = 759 as const
 
 export const ratio = {
-    size: (options: { large?: string; medium?: string; small?: string }) => {
+    size: (options: { web?: string; tablet?: string; mobile?: string }) => {
         return `
             ${
-                options.large &&
+                options.web &&
                 `
-                    @media (min-width: ${LARGE_MEDIUM + 1}px) {
-                        ${options.large}
+                    @media (min-width: ${WEB_TABLET + 1}px) {
+                        ${options.web}
                     }
                 `
             }
 
             ${
-                options.medium &&
+                options.tablet &&
                 `
-                    @media (min-width: ${MEDIUM_SMALL + 1}px) and (max-width: ${LARGE_MEDIUM}px) {
-                        ${options.medium}
+                    @media (min-width: ${TABLET_MOBILE + 1}px) and (max-width: ${WEB_TABLET}px) {
+                        ${options.tablet}
                     }
                 `
             }
             
             ${
-                options.small &&
+                options.mobile &&
                 `
-                    @media (max-width: ${MEDIUM_SMALL}px) {
-                        ${options.small}
+                    @media (max-width: ${TABLET_MOBILE}px) {
+                        ${options.mobile}
                     }
                 `
             }
