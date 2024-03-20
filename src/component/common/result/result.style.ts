@@ -17,6 +17,7 @@ export namespace ResultStyle {
             background-color: ${theme.color.white};
             border: 5px solid ${theme.color.red};
             padding: 10px;
+            z-index: 2;
         `}
     `
 

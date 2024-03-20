@@ -5,11 +5,26 @@ export namespace BoardStyle {
         ${({ theme }) => `
             position: relative;
             display: grid;
-            grid-template-rows: repeat(12, 40px);
-            grid-template-columns: repeat(12, 40px);
-            background-color: ${theme.color.beige};
-            border: 2px solid ${theme.color.black};
-            padding: 20px;
+            background-color: ${theme.color.lightbrown};
+            border: 1px solid ${theme.color.black};
+
+            ${theme.ratio.size({
+                web: `
+                    grid-template-rows: repeat(11, 40px);
+                    grid-template-columns: repeat(11, 40px);
+                    padding: 20px;
+                `,
+                tablet: `
+                    grid-template-rows: repeat(11, 40px);
+                    grid-template-columns: repeat(11, 40px);
+                    padding: 20px;
+                `,
+                mobile: `
+                    grid-template-rows: repeat(11, 35px);
+                    grid-template-columns: repeat(11, 35px);
+                    padding: 17.5px;
+                `
+            })}
         `}
     `
 }
