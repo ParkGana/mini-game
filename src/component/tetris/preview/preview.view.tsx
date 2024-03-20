@@ -8,9 +8,7 @@ export function Preview() {
     return (
         <PreviewStyle.Container>
             <PreviewStyle.Text>NEXT</PreviewStyle.Text>
-            <PreviewStyle.SafetyContainer>
-                <Image src={`/images/tetris/${tetris.next}.png`} alt="image" />
-            </PreviewStyle.SafetyContainer>
+            <Image src={`/images/tetris/${tetris.next}.png`} alt="image" />
         </PreviewStyle.Container>
     )
 }

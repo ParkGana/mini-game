@@ -3,11 +3,23 @@ import styled from 'styled-components'
 export namespace BoardItemStyle {
     export const Container = styled.div<{ color: string }>`
         ${({ theme, color }) => `
-            width: 30px;
-            height: 30px;
             background-color: ${color};
-            border-right: 1px solid ${theme.color.gray};
-            border-bottom: 1px solid ${theme.color.gray};
+            border: 1px solid ${theme.color.gray};
+
+            ${theme.ratio.size({
+                web: `
+                    width: 30px;
+                    height: 30px;
+                `,
+                tablet: `
+                    width: 30px;
+                    height: 30px;
+                `,
+                mobile: `
+                    width: 25px;
+                    height: 25px;
+                `
+            })}
         `}
     `
 }

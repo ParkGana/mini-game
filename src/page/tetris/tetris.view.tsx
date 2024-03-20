@@ -3,21 +3,21 @@ import { TetrisStyle } from './tetris.style'
 import { Preview } from '@/src/component/tetris/preview/preview.view'
 import { Button } from '@/src/component/tetris/button/button.view'
 import { useTetris } from './tetris.hook'
-import { Home } from '@/src/component/common/home/home.view'
+import { Layout } from '@/src/component/common/layout/layout.view'
 
 export function Tetris() {
     const { events } = useTetris()
 
     return (
-        <TetrisStyle.Container>
-            <Home />
-            <TetrisStyle.SafetyContainer>
+        <Layout>
+            <TetrisStyle.Container>
                 <Board />
+
                 <TetrisStyle.RightContainer>
                     <Preview />
                     <Button name={'RESET'} clickCallback={events.onClickButton} />
                 </TetrisStyle.RightContainer>
-            </TetrisStyle.SafetyContainer>
-        </TetrisStyle.Container>
+            </TetrisStyle.Container>
+        </Layout>
     )
 }

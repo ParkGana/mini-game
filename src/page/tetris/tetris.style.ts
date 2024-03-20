@@ -2,19 +2,13 @@ import styled from 'styled-components'
 
 export namespace TetrisStyle {
     export const Container = styled.div`
-        display: grid;
-        justify-items: center;
-        padding: 20px;
-    `
-
-    export const SafetyContainer = styled.div`
         ${({ theme }) => `
             display: grid;
-            grid-template-columns : fit-content(500px) 150px;
+            grid-template-columns: repeat(2, fit-content(500px));
             justify-content: space-between;
-            gap: 30px;
-            padding: 30px;
+            gap: 20px;
             background-color: ${theme.color.darkgray};
+            padding: 20px;
         `}
     `
 

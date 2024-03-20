@@ -6,17 +6,11 @@ export namespace PreviewStyle {
             display: grid;
             justify-items: center;
             gap: 20px;
+            background-color: ${theme.color.black};
             border: 3px solid ${theme.color.gray};
-            text-align: center;
             padding: 10px;
-
+            text-align: center;
         `}
-    `
-
-    export const SafetyContainer = styled.div`
-        height: 70px;
-        display: grid;
-        align-items: center;
     `
 
     export const Text = styled.div`
