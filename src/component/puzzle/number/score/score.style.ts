@@ -3,9 +3,8 @@ import styled from 'styled-components'
 export namespace ScoreStyle {
     export const Container = styled.div`
         display: grid;
+        align-items: center;
         justify-items: center;
-        gap: 5px;
-        padding: 10px;
     `
 
     export const Title = styled.div`
