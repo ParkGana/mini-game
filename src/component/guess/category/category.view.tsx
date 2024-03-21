@@ -17,6 +17,7 @@ export function Category({
         <CategoryStyle.Container ref={refs.ref} onClick={events.onToggleCategory}>
             <CategoryStyle.Text>{selected}</CategoryStyle.Text>
             <Image src={`/icons/guess/category-arrow-${states.isOpen ? 'up' : 'down'}.png`} alt="icon" />
+
             <CategoryStyle.Option.Container isOpen={states.isOpen}>
                 {options.map((option, index) => (
                     <CategoryStyle.Option.SafetyContainer key={index} onClick={() => selectCallback(option)}>

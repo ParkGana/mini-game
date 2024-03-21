@@ -15,7 +15,7 @@ export namespace CategoryStyle {
         `}
     `
 
-    export const Text = styled.div`
+    export const Text = styled.p`
         ${({ theme }) => `
             ${theme.font.body1};
             color: ${theme.color.black};
@@ -45,7 +45,7 @@ export namespace CategoryStyle {
             `}
         `
 
-        export const Text = styled.div`
+        export const Text = styled.p`
             ${({ theme }) => `
                 ${theme.font.body1};
                 padding: 10px;

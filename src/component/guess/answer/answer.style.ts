@@ -1,39 +1,38 @@
 import styled from 'styled-components'
 
 export namespace AnswerStyle {
-    export const Container = styled.div``
-
-    export const SafetyContainer = styled.div`
+    export const Container = styled.div`
         display: grid;
-        grid-template-columns: fit-content(500px) 100px;
         align-items: center;
         justify-content: space-between;
+        grid-template-columns: repeat(2, fit-content(300px));
     `
 
-    export const Text = styled.div`
+    export const Text = styled.p`
         ${({ theme }) => `
             ${theme.font.title1};
+            color: ${theme.color.black};
         `}
     `
 
     export namespace Button {
         export const Container = styled.div`
             ${({ theme }) => `
-                width: 100px;
                 display: grid;
-                grid-template-columns: repeat(2, fit-content(100px));
                 align-items: center;
-                justify-content: space-between;
+                grid-template-columns: repeat(2, fit-content(100px));
+                gap: 5px;
                 border: 2px solid ${theme.color.gray};
-                border-radius: 10px;
+                border-radius: 5px;
                 padding: 10px;
                 cursor: pointer;
             `}
         `
 
-        export const Text = styled.div`
+        export const Text = styled.p`
             ${({ theme }) => `
                 ${theme.font.title3};
+                color: ${theme.color.black};
             `}
         `
     }

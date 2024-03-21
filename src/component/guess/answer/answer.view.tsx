@@ -6,21 +6,23 @@ export function Answer({ checkCallback, moveCallback }: { checkCallback: () => v
     const character = useSelector((state: any) => state.guess)
 
     return (
-        <AnswerStyle.Container>
+        <>
             {character.isOpen ? (
-                <AnswerStyle.SafetyContainer>
+                <AnswerStyle.Container>
                     <AnswerStyle.Text>{character.name}</AnswerStyle.Text>
                     <AnswerStyle.Button.Container onClick={moveCallback}>
                         <AnswerStyle.Button.Text>다음 문제</AnswerStyle.Button.Text>
                         <Image src={'/icons/guess/arrow-right.png'} alt="icon" />
                     </AnswerStyle.Button.Container>
-                </AnswerStyle.SafetyContainer>
+                </AnswerStyle.Container>
             ) : (
-                <AnswerStyle.Button.Container onClick={checkCallback}>
-                    <Image src={'/icons/guess/check.png'} alt="icon" />
-                    <AnswerStyle.Button.Text>정답 확인</AnswerStyle.Button.Text>
-                </AnswerStyle.Button.Container>
+                <AnswerStyle.Container>
+                    <AnswerStyle.Button.Container onClick={checkCallback}>
+                        <Image src={'/icons/guess/check.png'} alt="icon" />
+                        <AnswerStyle.Button.Text>정답 확인</AnswerStyle.Button.Text>
+                    </AnswerStyle.Button.Container>
+                </AnswerStyle.Container>
             )}
-        </AnswerStyle.Container>
+        </>
     )
 }
