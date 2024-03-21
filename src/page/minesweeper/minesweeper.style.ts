@@ -4,8 +4,7 @@ export namespace MinesweeperStyle {
     export const Container = styled.div`
         display: grid;
         justify-items: center;
-        gap: 30px;
-        padding: 20px;
+        gap: 20px;
     `
 
     export const SafetyContainer = styled.div`

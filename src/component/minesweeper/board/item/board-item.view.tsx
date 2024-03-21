@@ -16,6 +16,7 @@ export function BoardItem({ data }: { data: BoardType }) {
             {data.isOpen && data.view !== MinesweeperBoardViewEnum.EMPTY && (
                 <Image src={`/icons/minesweeper/view-${data.view.toLowerCase()}.png`} alt="icon" />
             )}
+
             {data.mark !== MinesweeperBoardMarkEnum.EMPTY && (
                 <Image src={`/icons/minesweeper/mark-${data.mark.toLowerCase()}.png`} alt="icon" />
             )}
