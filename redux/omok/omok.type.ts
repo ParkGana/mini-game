@@ -8,5 +8,6 @@ export interface StoneType {
 export interface OmokType {
     user1: StoneType[]
     user2: StoneType[]
+    turn: number
     condition: OmokConditionEnum
 }
