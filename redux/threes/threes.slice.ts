@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { PuzzleNumberType } from './puzzle-number.type'
-import { PuzzleNumberConditionEnum } from './puzzle-number.enum'
-import { RandomNumber } from '@/src/tool/puzzle-number.tool'
+import { ThreesType } from './threes.type'
+import { ThreesConditionEnum } from './threes.enum'
+import { RandomNumber } from '@/src/tool/threes'
 
-const InitialState: PuzzleNumberType = {
+const InitialState: ThreesType = {
     value: [],
-    condition: PuzzleNumberConditionEnum.RUNNING,
+    condition: ThreesConditionEnum.RUNNING,
     score: 0
 }
 
-const puzzleNumberSlice = createSlice({
-    name: 'puzzleNumber',
+const threesSlice = createSlice({
+    name: 'threes',
     initialState: InitialState,
     reducers: {
         /* 게임 초기화 */
@@ -28,13 +28,13 @@ const puzzleNumberSlice = createSlice({
                 }
             }
 
-            state.condition = PuzzleNumberConditionEnum.RUNNING
+            state.condition = ThreesConditionEnum.RUNNING
             state.score = 0
         },
 
         /* 위쪽으로 이동 */
         moveToUp: (state, action) => {
-            if (state.condition === PuzzleNumberConditionEnum.RUNNING) {
+            if (state.condition === ThreesConditionEnum.RUNNING) {
                 let origin = state.value.toString()
 
                 for (let i = 0; i < 4; i++) {
@@ -68,8 +68,8 @@ const puzzleNumberSlice = createSlice({
                     state.value[RandomNumber(state.value)] = 2
                 }
 
-                puzzleNumberSlice.caseReducers.finishGame(state, {
-                    type: 'puzzleNumber/finishGame',
+                threesSlice.caseReducers.finishGame(state, {
+                    type: 'threes/finishGame',
                     payload: {}
                 })
             }
@@ -77,7 +77,7 @@ const puzzleNumberSlice = createSlice({
 
         /* 아래쪽으로 이동 */
         moveToDown: (state, action) => {
-            if (state.condition === PuzzleNumberConditionEnum.RUNNING) {
+            if (state.condition === ThreesConditionEnum.RUNNING) {
                 let origin = state.value.toString()
 
                 for (let i = 0; i < 4; i++) {
@@ -111,8 +111,8 @@ const puzzleNumberSlice = createSlice({
                     state.value[RandomNumber(state.value)] = 2
                 }
 
-                puzzleNumberSlice.caseReducers.finishGame(state, {
-                    type: 'puzzleNumber/finishGame',
+                threesSlice.caseReducers.finishGame(state, {
+                    type: 'threes/finishGame',
                     payload: {}
                 })
             }
@@ -120,7 +120,7 @@ const puzzleNumberSlice = createSlice({
 
         /* 왼쪽으로 이동 */
         moveToLeft: (state, action) => {
-            if (state.condition === PuzzleNumberConditionEnum.RUNNING) {
+            if (state.condition === ThreesConditionEnum.RUNNING) {
                 let origin = state.value.toString()
 
                 for (let i = 0; i < 4; i++) {
@@ -154,8 +154,8 @@ const puzzleNumberSlice = createSlice({
                     state.value[RandomNumber(state.value)] = 2
                 }
 
-                puzzleNumberSlice.caseReducers.finishGame(state, {
-                    type: 'puzzleNumber/finishGame',
+                threesSlice.caseReducers.finishGame(state, {
+                    type: 'threes/finishGame',
                     payload: {}
                 })
             }
@@ -163,7 +163,7 @@ const puzzleNumberSlice = createSlice({
 
         /* 오른쪽으로 이동 */
         moveToRight: (state, action) => {
-            if (state.condition === PuzzleNumberConditionEnum.RUNNING) {
+            if (state.condition === ThreesConditionEnum.RUNNING) {
                 let origin = state.value.toString()
 
                 for (let i = 0; i < 4; i++) {
@@ -197,8 +197,8 @@ const puzzleNumberSlice = createSlice({
                     state.value[RandomNumber(state.value)] = 2
                 }
 
-                puzzleNumberSlice.caseReducers.finishGame(state, {
-                    type: 'puzzleNumber/finishGame',
+                threesSlice.caseReducers.finishGame(state, {
+                    type: 'threes/finishGame',
                     payload: {}
                 })
             }
@@ -207,14 +207,14 @@ const puzzleNumberSlice = createSlice({
         /* 게임 종료 */
         finishGame: (state, action) => {
             if (state.value.includes(2048)) {
-                state.condition = PuzzleNumberConditionEnum.SUCCESS
+                state.condition = ThreesConditionEnum.SUCCESS
             } else if (state.value.filter((item) => item === 0).length === 0) {
-                state.condition = PuzzleNumberConditionEnum.FAIL
+                state.condition = ThreesConditionEnum.FAIL
             }
         }
     }
 })
 
-export default puzzleNumberSlice
+export default threesSlice
 
-export const { resetGame, moveToUp, moveToDown, moveToLeft, moveToRight, finishGame } = puzzleNumberSlice.actions
+export const { resetGame, moveToUp, moveToDown, moveToLeft, moveToRight, finishGame } = threesSlice.actions

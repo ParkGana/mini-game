@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export namespace PuzzleNumberStyle {
+export namespace ThreesStyle {
     export const Container = styled.div`
         ${({ theme }) => `
             display: grid;

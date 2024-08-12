@@ -11,7 +11,7 @@ export function Home() {
                 <Thumbnail title={'지뢰찾기'} src={'minesweeper'} />
                 <Thumbnail title={'캐릭터 맞추기'} src={'guess-character'} />
                 <Thumbnail title={'테트리스'} src={'tetris'} />
-                <Thumbnail title={'2048'} src={'puzzle-number'} />
+                <Thumbnail title={'2048'} src={'threes'} />
             </HomeStyle.SafetyContainer>
         </HomeStyle.Container>
     )

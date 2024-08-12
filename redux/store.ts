@@ -3,7 +3,7 @@ import minesweeperSlice from './minesweeper/minesweeper.slice'
 import guessSlice from './guess/guess.slice'
 import tetrisSlice from './tetris/tetris.slice'
 import snakeSlice from './snake/snake.slice'
-import puzzleNumberSlice from './puzzle/puzzle-number.slice'
+import threesSlice from './threes/threes.slice'
 import omokSlice from './omok/omok.slice'
 
 export const store = configureStore({
@@ -11,8 +11,8 @@ export const store = configureStore({
         guess: guessSlice.reducer,
         minesweeper: minesweeperSlice.reducer,
         omok: omokSlice.reducer,
-        puzzleNumber: puzzleNumberSlice.reducer,
         snake: snakeSlice.reducer,
-        tetris: tetrisSlice.reducer
+        tetris: tetrisSlice.reducer,
+        threes: threesSlice.reducer
     }
 })

@@ -1,4 +1,4 @@
-export const PuzzleNumberData = [
+export const ThreesData = [
     {
         value: 0,
         text: '#FBEDDC',
