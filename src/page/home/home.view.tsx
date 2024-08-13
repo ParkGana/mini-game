@@ -5,6 +5,7 @@ export function Home() {
     return (
         <HomeStyle.Container>
             <HomeStyle.SafetyContainer>
+                <Thumbnail title={'그림 퍼즐'} src={'puzzle'} />
                 <Thumbnail title={'스네이크'} src={'snake'} />
                 <Thumbnail title={'오목'} src={'omok'} />
                 <Thumbnail title={'인물 맞추기'} src={'guess-people'} />
