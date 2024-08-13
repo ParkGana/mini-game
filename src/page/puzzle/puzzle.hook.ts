@@ -1,20 +1,37 @@
-import { useState } from 'react'
+import { PuzzleLevelEnum } from '@/redux/puzzle/puzzle.enum'
+import { changeLevel, createBoard, startGame } from '@/redux/puzzle/puzzle.slice'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 export function usePuzzle() {
-    const [level, setLevel] = useState<string>('초급')
+    const dispatch = useDispatch()
 
-    const onSelectLevel = (value: string) => {
-        setLevel(value)
+    useEffect(() => {
+        dispatch(createBoard({ level: PuzzleLevelEnum.EASY }))
+
+        setTimeout(() => {
+            dispatch(startGame({}))
+        }, 3000)
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    /* 난이도 변경 */
+    const onChangeLevel = (level: string) => {
+        dispatch(changeLevel({ level }))
     }
 
-    const onClickButton = () => {}
+    const onClickButton = (level: string) => {
+        dispatch(createBoard({ level }))
+
+        setTimeout(() => {
+            dispatch(startGame({}))
+        }, 3000)
+    }
 
     return {
-        states: {
-            level
-        },
         events: {
-            onSelectLevel,
+            onChangeLevel,
             onClickButton
         }
     }

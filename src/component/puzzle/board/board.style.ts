@@ -1,3 +1,4 @@
+import { PuzzleLevelEnum } from '@/redux/puzzle/puzzle.enum'
 import styled from 'styled-components'
 
 export namespace BoardStyle {
@@ -10,26 +11,26 @@ export namespace BoardStyle {
             ${theme.ratio.size({
                 web: `
                     grid-template-rows: repeat(${size}, ${
-                        level === '초급' ? '270' : level === '중급' ? '180' : '135'
+                        level === PuzzleLevelEnum.EASY ? '270' : level === PuzzleLevelEnum.MEDIUM ? '180' : '135'
                     }px);
                     grid-template-columns: repeat(${size}, ${
-                        level === '초급' ? '270' : level === '중급' ? '180' : '135'
+                        level === PuzzleLevelEnum.EASY ? '270' : level === PuzzleLevelEnum.MEDIUM ? '180' : '135'
                     }px);
                 `,
                 tablet: `
                     grid-template-rows: repeat(${size}, ${
-                        level === '초급' ? '240' : level === '중급' ? '160' : '120'
+                        level === PuzzleLevelEnum.EASY ? '240' : level === PuzzleLevelEnum.MEDIUM ? '160' : '120'
                     }px);
                     grid-template-columns: repeat(${size}, ${
-                        level === '초급' ? '240' : level === '중급' ? '160' : '120'
+                        level === PuzzleLevelEnum.EASY ? '240' : level === PuzzleLevelEnum.MEDIUM ? '160' : '120'
                     }px);
                 `,
                 mobile: `
                     grid-template-rows: repeat(${size}, ${
-                        level === '초급' ? '210' : level === '중급' ? '140' : '105'
+                        level === PuzzleLevelEnum.EASY ? '210' : level === PuzzleLevelEnum.MEDIUM ? '140' : '105'
                     }px);
                     grid-template-columns: repeat(${size}, ${
-                        level === '초급' ? '210' : level === '중급' ? '140' : '105'
+                        level === PuzzleLevelEnum.EASY ? '210' : level === PuzzleLevelEnum.MEDIUM ? '140' : '105'
                     }px);
                 `
             })}

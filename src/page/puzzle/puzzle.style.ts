@@ -15,4 +15,11 @@ export namespace PuzzleStyle {
         grid-template-columns: repeat(2, fit-content(300px));
         justify-content: space-between;
     `
+
+    export const LevelContainer = styled.div`
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, fit-content(200px));
+        gap: 10px;
+    `
 }

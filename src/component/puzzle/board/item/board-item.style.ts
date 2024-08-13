@@ -1,3 +1,4 @@
+import { PuzzleLevelEnum } from '@/redux/puzzle/puzzle.enum'
 import styled from 'styled-components'
 
 export namespace BoardItemStyle {
@@ -10,18 +11,35 @@ export namespace BoardItemStyle {
 
             ${theme.ratio.size({
                 web: `
-                    width: ${level === '초급' ? '270' : level === '중급' ? '180' : '135'}px;
-                    height: ${level === '초급' ? '270' : level === '중급' ? '180' : '135'}px;
+                    width: ${
+                        level === PuzzleLevelEnum.EASY ? '270' : level === PuzzleLevelEnum.MEDIUM ? '180' : '135'
+                    }px;
+                    height: ${
+                        level === PuzzleLevelEnum.EASY ? '270' : level === PuzzleLevelEnum.MEDIUM ? '180' : '135'
+                    }px;
                 `,
                 tablet: `
-                    width: ${level === '초급' ? '240' : level === '중급' ? '160' : '120'}px;
-                    height: ${level === '초급' ? '240' : level === '중급' ? '160' : '120'}px;
+                    width: ${
+                        level === PuzzleLevelEnum.EASY ? '240' : level === PuzzleLevelEnum.MEDIUM ? '160' : '120'
+                    }px;
+                    height: ${
+                        level === PuzzleLevelEnum.EASY ? '240' : level === PuzzleLevelEnum.MEDIUM ? '160' : '120'
+                    }px;
                 `,
                 mobile: `
-                    width: ${level === '초급' ? '210' : level === '중급' ? '140' : '105'}px;
-                    height: ${level === '초급' ? '210' : level === '중급' ? '140' : '105'}px;
+                    width: ${
+                        level === PuzzleLevelEnum.EASY ? '210' : level === PuzzleLevelEnum.MEDIUM ? '140' : '105'
+                    }px;
+                    height: ${
+                        level === PuzzleLevelEnum.EASY ? '210' : level === PuzzleLevelEnum.MEDIUM ? '140' : '105'
+                    }px;
                 `
             })}
         `}
+    `
+
+    export const Image = styled.img`
+        width: 100%;
+        cursor: pointer;
     `
 }
