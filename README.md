@@ -1,4 +1,4 @@
-# game-web
+# mini-game
 
 ---
 
