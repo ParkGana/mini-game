@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { PuzzleConditionEnum } from '@/redux/puzzle/puzzle.enum'
 import { Result } from '../../common/result/result.view'
 import { Instruction } from '../../common/instruction/Instruction.view'
+import { PuzzleData } from '@/redux/puzzle/puzzle.data'
 
 export function Board() {
     const puzzle = useSelector((state: any) => state.puzzle)
@@ -24,7 +25,7 @@ export function Board() {
                         </React.Fragment>
                     ))}
 
-                    <BoardStyle.Image src={`/images/puzzle/${puzzle.resource.image}.png`} alt="image" />
+                    <BoardStyle.Image src={PuzzleData[puzzle.resource.image - 1].origin} alt="image" />
 
                     {puzzle.condition === PuzzleConditionEnum.STANDBY && (
                         <Instruction message={'사진을 잘 기억하시고 퍼즐을 완성해주세요.'} />

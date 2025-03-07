@@ -1,7 +1,7 @@
 export enum PuzzleLevelEnum {
-    EASY = '초급',
-    MEDIUM = '중급',
-    DIFFICULT = '고급'
+    EASY = 'EASY',
+    MEDIUM = 'MEDIUM',
+    DIFFICULT = 'DIFFICULT'
 }
 
 export enum PuzzleConditionEnum {
