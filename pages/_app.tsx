@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <Style />
                 <Head>
                     <link rel="shortcut icon" href="/favicon.ico" />
-                    <title>REACT</title>
+                    <title>미니 게임</title>
                 </Head>
                 <Component {...pageProps} />
             </ThemeProvider>
